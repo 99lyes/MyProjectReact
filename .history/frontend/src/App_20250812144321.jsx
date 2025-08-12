@@ -10,7 +10,7 @@ import ProfilePage from "./pages/ProfilePage"
 import { useAuthStore } from './store/useAuthStore';
 
 function App() {
-  const {authUser} = useAuthStore();
+  const {authUser} = useAuthStore;
   return (
     <>
       <div>
