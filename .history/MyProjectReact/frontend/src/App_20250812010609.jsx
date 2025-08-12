@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import './App.css'
 
 function App() {
@@ -5,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className='text-red-700'>
+      <div >
         hello
       </div>
       
