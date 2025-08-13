@@ -8,4 +8,4 @@ Sign Up page
   )
 }
 
-export default SignUpPage;
+export default SignUpPage

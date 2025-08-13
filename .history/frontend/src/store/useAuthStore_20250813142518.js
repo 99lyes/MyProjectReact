@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { axiosInstance } from "../lib/axios.js";
+import { axiosInstance } from "../lib/axios";
 
 
 export const useAuthStore = create((set) => ({
@@ -16,7 +16,7 @@ export const useAuthStore = create((set) => ({
 
             set({authUser:res.data});
         } catch (error) {
-            console.log("Error in checkAuth", error)
+            console.log("Error in checkAuth")
             set({authUser:null});
         }finally{
             set({ isChekcingAuth: false});
