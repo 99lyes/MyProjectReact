@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
@@ -30,7 +30,7 @@ const App =() => {
         <Routes>
           <Route path="/" element={authUser ? <HomePage/> : <Navigate to="/login"/>}/>
           <Route path="/signup" element={!authUser ? <SignUpPage/> : <Navigate to="/"/>}/>
-          <Route path="/login" element={!authUser ? <LoginPage/> : <Navigate to="/"/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
           <Route path="/settings" element={<SettingsPage/>}/>
           <Route path="/profile" element={authUser ? <ProfilePage/> : <Navigate to="/login"/>}/>
         </Routes>
