@@ -37,5 +37,5 @@ export const useAuthStore = create((set) => ({
         }finally {
             set({ isSigningUp: false});
         }
-    },
+    }
 })); 

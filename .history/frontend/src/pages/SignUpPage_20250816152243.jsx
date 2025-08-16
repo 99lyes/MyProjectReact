@@ -2,8 +2,6 @@ import React,{ useState} from 'react'
 import { useAuthStore } from '../store/useAuthStore';
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import AuthImagePattern from '../components/AuthImagePattern';
-import toast from 'react-hot-toast';
 
 
 const SignUpPage = () => {
@@ -16,23 +14,10 @@ const SignUpPage = () => {
 
   const { signup, isSigningUp } = useAuthStore();
 
-  const validateForm = () => { 
-    if (!formData.fullName.trim()) return toast.error("Full name is required");
-    if (!formData.email.trim()) return toast.error("Email is required");
-    if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
-    if (!formData.password.trim()) return toast.error("Password is required");
-    if (!formData.password.length < 6) return toast.error("Password must be at least 6 caracters");
-    
-    return true;
-  };
+  const validateForm = () => {};
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    const success = validateForm();
-
-    if(success===true) signup(formData);
-
-  };
+  }
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
@@ -129,7 +114,7 @@ const SignUpPage = () => {
 
           <div className='text-center'>
             <p className='text-base-acontent/60'>
-              Already have an account?{" "}
+              Already have an account?{""}
               <Link to="/login" className='link link-primary'>
                 Sign in 
               </Link>
@@ -137,14 +122,6 @@ const SignUpPage = () => {
           </div>
         </div>
       </div>
-
-
-
-      {/** Right side  */}
-
-      <AuthImagePattern 
-        title="Join our community"
-        subtitle="Connect with friends, share moments, and stay in touch with your loved ones."/>
     </div>
   )
 }
