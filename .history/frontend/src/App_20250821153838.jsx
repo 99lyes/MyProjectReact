@@ -31,7 +31,7 @@ const App =() => {
     </div>
   )
   return (
-      <div data-theme={theme}>
+      <div data-theme="retro">
         <Navbar />
         <Routes>
           <Route path="/" element={authUser ? <HomePage/> : <Navigate to="/login"/>}/>
