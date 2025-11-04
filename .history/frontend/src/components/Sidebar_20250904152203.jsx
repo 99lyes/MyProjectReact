@@ -14,6 +14,8 @@ const Sidebar = () => {
     getUsers();
   }, [getUsers]);
 
+  /
+
   const filteredUsers = users || [];
 
   if (isUsersLoading) return <SidebarSkeleton />;

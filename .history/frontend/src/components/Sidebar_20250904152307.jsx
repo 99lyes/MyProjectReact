@@ -8,13 +8,13 @@ const Sidebar = () => {
   const { getUsers, users, isUsersLoading, setSelectedUser, selectedUser } =
     useChatStore();
 
-  const { onlineUsers } = useAuthStore();
+  const onlineUsers = [];
 
   useEffect(() => {
     getUsers();
   }, [getUsers]);
 
-  const filteredUsers = users || [];
+  const filteredUsers = [];
 
   if (isUsersLoading) return <SidebarSkeleton />;
 
