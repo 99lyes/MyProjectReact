@@ -33,14 +33,6 @@ const ChatContainer = () => {
     unsubscribeFromMessages,
   ]);
 
-  useEffect(() => {}, [messages]);
-
-  useEffect(() => {
-    if (messageEndRef.current && messages) {
-      messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages]);
-
   if (isMessagesLoading) {
     return (
       <div className="flex-1 felx flex-col overflow-auto">

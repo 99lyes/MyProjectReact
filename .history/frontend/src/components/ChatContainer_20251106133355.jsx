@@ -33,14 +33,6 @@ const ChatContainer = () => {
     unsubscribeFromMessages,
   ]);
 
-  useEffect(() => {}, [messages]);
-
-  useEffect(() => {
-    if (messageEndRef.current && messages) {
-      messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages]);
-
   if (isMessagesLoading) {
     return (
       <div className="flex-1 felx flex-col overflow-auto">
@@ -62,7 +54,6 @@ const ChatContainer = () => {
             className={`chat ${
               message.senderId === authUser._id ? "chat-end" : "chat-start"
             }`}
-            ref={messageEndRef}
           >
             <div className="chay-image avatar">
               <div className="size-10 rounded-full border">

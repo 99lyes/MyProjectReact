@@ -10,7 +10,7 @@ const Sidebar = () => {
     useChatStore();
 
   const { onlineUsers } = useAuthStore();
-  const [showOnlineOnly, setShowOnlineOnly] = useState(false);
+  const { showOnlineOnly, setShowOnlineOnly } = useState(false);
 
   useEffect(() => {
     getUsers();
@@ -43,7 +43,7 @@ const Sidebar = () => {
             <span className="text-sm">Show online only</span>
           </label>
           <span className="text-xs text-zinc-500">
-            ({onlineUsers.length - 1} online)
+            ({onlineUsers.lenght - 1} online)
           </span>
         </div>
       </div>
@@ -81,7 +81,9 @@ const Sidebar = () => {
             <div className="hidden lg:block text-left min-w-0">
               <div className="font-medium truncate">{user.fullName}</div>
               <div className="text-sm text-zinc-400">
-                {onlineUsers.includes(user._id) ? "Online" : "Offline"}
+                {Array.isArray(onlineUsers) && onlineUsers.includes(user._id)
+                  ? "Online"
+                  : "Offline"}
               </div>
             </div>
           </button>
