@@ -14,9 +14,6 @@ dotenv.config();
 const PORT = process.env.PORT || 5001;
 const __dirname = path.resolve();
 
-console.log("PORT env:", process.env.PORT);
-console.log("BASE_URL env:", process.env.BASE_URL);
-
 // Middleware pour parser JSON et URL-encoded
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
